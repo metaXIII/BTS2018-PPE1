@@ -7,8 +7,6 @@
  */
 
 require 'fonctions/fonction.php';
-if ($db)
-    var_dump($_SESSION);
 ?>
 <!doctype html>
 <html lang="en">
