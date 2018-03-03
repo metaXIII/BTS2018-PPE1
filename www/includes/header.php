@@ -6,38 +6,50 @@
  * Time: 19:36
  */
 ?>
-
-<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-tomate col-lg-10 navbar-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarExpand"
+            aria-controls="NavbarExpand" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <a href="#">
+        <img src="images/Wallpapers/icone.jpg" width="40px" alt="Logo FoodnDrink">
+    </a>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse" id="NavbarExpand">
+        <ul class="navbar-nav mr-auto my-2">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Nos recettes de cuisine<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Nos boissons</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Astuces de chef</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Contact</a>
             </li>
+           <li class="nav-item active">
+               <a class="nav-link" href="#">Se connecter</a>
+           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+
     </div>
 </nav>
+
+<div class="col-6 col-md-3 sidebar-offcanvas leftbloc col-lg-2" id="sidebar">
+    <div class="list-group">
+        <a href="#">
+            <img src="images/Wallpapers/food.jpg" height="200x" alt="" class="mw-100">
+        </a>
+        <a href="#">
+            <img src="images/Wallpapers/cocktail.jpg" height="200x" alt="" class="mw-100">
+        </a>
+        <a href="#">
+            <img src="images/Wallpapers/cuistot.jpg" height="200x" alt="" class="mw-100">
+        </a>
+        <a href="#">
+            <img src="images/Wallpapers/contact.jpg" height="200x" alt="" class="mw-100">
+        </a>
+    </div>
+</div>

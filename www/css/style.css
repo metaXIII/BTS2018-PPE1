@@ -1,0 +1,49 @@
+.leftbloc {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    height: -webkit-fill-available;
+}
+
+.main {
+    margin-right: 0;
+}
+
+.bg-tomate
+{
+    background-color: #DE2916;
+}
+
+.list-group > a {
+    text-align: center;
+}
+
+/**
+@media queries
+ */
+
+/**
+Version LG
+ */
+
+/**
+Version Medium
+ */
+@media screen and (min-width: 992px) {
+    .navbar-top {
+        display: none;
+    }
+}
+
+/**
+Version Small
+ */
+@media screen and (max-width: 992px) {
+    .leftbloc {
+        display: none;
+    }
+}
+
+/**
+Version XSmall
+ */
