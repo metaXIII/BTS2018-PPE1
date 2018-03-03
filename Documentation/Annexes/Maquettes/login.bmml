@@ -31,10 +31,5 @@
         <text>Valider</text>
       </controlProperties>
     </control>
-    <control controlID="16" controlTypeID="com.balsamiq.mockups::Link" x="692" y="497" w="-1" h="-1" measuredW="244" measuredH="19" zOrder="11" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Pas%20encore%20de%20compte%20%3F%20Inscrivez%20vous%20%21%20</text>
-      </controlProperties>
-    </control>
   </controls>
 </mockup>
