@@ -37,7 +37,7 @@
     </div>
 </nav>
 
-<div class="col-6 col-md-3 sidebar-offcanvas leftbloc col-lg-2" id="sidebar">
+<div class="col-6 col-md-3 sidebar-offcanvas leftbloc col-lg-2 all" id="sidebar">
     <div class="list-group">
         <a href="#">
             <img src="images/Wallpapers/food.jpg" height="200x" alt="" class="mw-100">
@@ -53,3 +53,5 @@
         </a>
     </div>
 </div>
+
+

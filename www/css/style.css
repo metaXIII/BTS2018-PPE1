@@ -1,7 +1,14 @@
+html, body {
+    overflow-x: initial;
+}
+
 .leftbloc {
     position: absolute;
     top: 0;
     padding: 0;
+}
+
+.allheight {
     height: -webkit-fill-available;
 }
 
@@ -18,6 +25,48 @@
     text-align: center;
 }
 
+.w-10 {
+    width: 10% !important;
+}
+
+.w-20 {
+    width: 20% !important;
+}
+
+.w-30 {
+    width: 30% !important;
+}
+
+.w-40 {
+    width: 40% !important;
+}
+
+.w-60 {
+    width: 60% !important;
+}
+
+.w-70 {
+    width: 70% !important;
+}
+
+.w-80 {
+    width: 80% !important;
+}
+
+.w-90 {
+    width: 90% !important;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.min-width280 {
+    min-width: 280px !important;
+}
+
+
+
 /**
 @media queries
  */
@@ -25,15 +74,34 @@
 /**
 Version LG
  */
+@media screen and (min-width: 1200px) {
 
+}
 /**
 Version Medium
  */
+
+/* Au dessus de */
 @media screen and (min-width: 992px) {
     .navbar-top {
         display: none;
     }
+
+    .topMenu {
+        min-height: 250px;
+    }
+
+    .bandeauMenu {
+        display: block !important;
+    }
+
+    .main {
+        margin-top: -5%;
+        ♂
+    }
 }
+
+/* En dessous de */
 
 /**
 Version Small
@@ -42,8 +110,25 @@ Version Small
     .leftbloc {
         display: none;
     }
+
+    .main {
+        margin-top: 70px !important;
+    }
+
+    .sliderfloat {
+        float: initial !important;
+    }
+
+    .savebr {
+        display: none;
+    }
 }
 
 /**
 Version XSmall
  */
+@media screen and (max-width: 768px) {
+    .sliderfloat {
+        display: none;
+    }
+}

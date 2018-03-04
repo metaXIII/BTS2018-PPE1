@@ -11,9 +11,10 @@
 <meta name="description" content="Site de cuisine - découverte culinaire">
 <meta name="author" content="metaXIII">
 <link rel="icon" href="images/Wallpapers/icone.jpg">
-<title>Off Canvas Template for Bootstrap</title>
+<title>Food'n Drink - La cuisine pour les passionnés</title>
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
-<link href="css/offcanvas.css" rel="stylesheet">
+<link href="css/carousel.css" rel="stylesheet">
+<!--custom css -->
 <link rel="stylesheet" href="css/style.css">
