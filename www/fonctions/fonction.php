@@ -210,3 +210,70 @@ function afficheAleatoire($element)
         $query->closeCursor();
     }
 }
+
+function recupereInfo($id)
+{
+    if ((int)$id) {
+        $query = Database::getPdo()->prepare("SELECT * FROM recette WHERE id LIKE :id");
+        $query->bindValue(":id", $id);
+        $query->execute();
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        $query->closeCursor();
+        if (!$result)
+            header("Location:index.html");
+        else
+            return $result;
+    } else
+        header("location:index.html");
+}
+
+function afficheIngredients($id)
+{
+    $query = Database::getPdo()->prepare("SELECT * FROM recette WHERE id Like :id");
+    $query->bindValue(":id", $id);
+    $query->execute();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $ingredient = "";
+    if ($result['ingredient1'])
+        $ingredient .= $result['ingredient1'];
+    if ($result['ingredient2'])
+        $ingredient .= $result['ingredient2'];
+    if ($result['ingredient3'])
+        $ingredient .= $result['ingredient3'];
+    if ($result['ingredient4'])
+        $ingredient .= $result['ingredient4'];
+    if ($result['ingredient5'])
+        $ingredient .= $result['ingredient5'];
+    if ($result['ingredient6'])
+        $ingredient .= $result['ingredient6'];
+    if ($result['ingredient7'])
+        $ingredient .= $result['ingredient7'];
+    if ($result['ingredient8'])
+        $ingredient .= $result['ingredient8'];
+    if ($result['ingredient9'])
+        $ingredient .= $result['ingredient9'];
+    if ($result['ingredient10'])
+        $ingredient .= $result['ingredient10'];
+    if ($result['ingredient11'])
+        $ingredient .= $result['ingredient11'];
+    if ($result['ingredient12'])
+        $ingredient .= $result['ingredient12'];
+    if ($result['ingredient13'])
+        $ingredient .= $result['ingredient13'];
+    if ($result['ingredient14'])
+        $ingredient .= $result['ingredient14'];
+    if ($result['ingredient15'])
+        $ingredient .= $result['ingredient15'];
+    if ($result['ingredient16'])
+        $ingredient .= $result['ingredient16'];
+    if ($result['ingredient17'])
+        $ingredient .= $result['ingredient17'];
+    if ($result['ingredient18'])
+        $ingredient .= $result['ingredient18'];
+    if ($result['ingredient19'])
+        $ingredient .= $result['ingredient19'];
+    if ($result['ingredient20'])
+        $ingredient .= $result['ingredient20'];
+    return $ingredient;
+
+}
