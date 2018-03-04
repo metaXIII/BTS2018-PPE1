@@ -35,7 +35,7 @@ function afficheProduit($info)
                 echo "<div class='carousel-caption text-left'>";
                 echo "<h1>" . $result['intitule'] . "</h1>";
                 echo "<p>" . $result['accroche'] . "</p>";
-                echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='recette-" . $result['id'] . "' role='button'>Voir la 
+                echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='recette.php?id=" . $result['id'] . "' role='button'>Voir la 
                 recette</a></p>";
                 echo "</div>";
                 echo "</div>";
@@ -69,7 +69,7 @@ function afficheProduit($info)
                 echo "<div class='carousel-caption text-left'>";
                 echo "<h1>" . $result['intitule'] . "</h1>";
                 echo "<p>" . $result['accroche'] . "</p>";
-                echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='recette-" . $result['id'] . "' role='button'>Voir la 
+                echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='recette.php?id=" . $result['id'] . "' role='button'>Voir la 
                 recette</a></p>";
                 echo "</div>";
                 echo "</div>";
@@ -90,7 +90,7 @@ function afficheProduit($info)
                 echo "<div class='carousel-caption text-left'>";
                 echo "<h1>" . $result['intitule'] . "</h1>";
                 echo "<p>" . $result['accroche'] . "</p>";
-                echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='recette-" . $result['id'] . "' role='button'>Voir la 
+                echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='recette.php?id=" . $result['id'] . "' role='button'>Voir la 
                 recette</a></p>";
                 echo "</div>";
                 echo "</div>";
@@ -124,7 +124,7 @@ function afficheProduit($info)
                 echo "<div class='carousel-caption text-left'>";
                 echo "<h1>" . $result['intitule'] . "</h1>";
                 echo "<p>" . $result['accroche'] . "</p>";
-                echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='recette-" . $result['id'] . "' role='button'>Voir la 
+                echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='recette.php?id=" . $result['id'] . "' role='button'>Voir la 
                 recette</a></p>";
                 echo "</div>";
                 echo "</div>";
@@ -146,8 +146,7 @@ function afficheProduit($info)
                     echo "<div class='carousel-caption text-left'>";
                     echo "<h1>Astuce du jour :</h1>";
                     echo "<p>" . $result['accroche'] . "</p>";
-                    echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='recette-" . $result['id'] . "' role='button'>Voir la 
-                recette</a></p>";
+                    echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='astuce.php?id=" . $result['id'] . "' role='button'>Voir l'astuce</a></p>";
                     echo "</div>";
                     echo "</div>";
                     echo "</div>";
@@ -180,7 +179,7 @@ function afficheProduit($info)
                     echo "<div class='carousel-caption text-left'>";
                     echo "<h1>Astuce du jour :</h1>";
                     echo "<p>" . $result['accroche'] . "</p>";
-                    echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='recette-" . $result['id'] . "' role='button'>Voir la 
+                    echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='astuce.php?id=" . $result['id'] . "' role='button'>Voir la 
                 recette</a></p>";
                     echo "</div>";
                     echo "</div>";
