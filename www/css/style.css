@@ -1,11 +1,36 @@
 html, body {
     overflow-x: initial;
+    padding-bottom: 0;
 }
 
+/**
+Define :
+Orange #ED7F10
+Tomate : #DE2916
+ */
+
 .leftbloc {
-    position: absolute;
+    position: fixed;
     top: 0;
-    padding: 0;
+    height: 380px;
+    padding-left: 0;
+    border: 1px solid #d1ecf1;
+    box-shadow: 4px 4px 40px #000;
+    border-radius: 0px 5px 40px 0px;
+}
+
+.topMenu {
+    background-color: #dedede;
+}
+
+.footer {
+    background-color: #dedede;
+}
+
+.leftbloc div > a img {
+    border-radius: 100px;
+    width: 80%;
+    height: 90px;
 }
 
 .allheight {
@@ -19,6 +44,16 @@ html, body {
 .bg-tomate
 {
     background-color: #DE2916;
+}
+
+.fondCuisine {
+    background: url("../images/Wallpapers/planche.jpg");
+    background-size: 100%;
+}
+
+.rechercheBloc {
+    border: 1px solid #ED7F10 !important;
+    box-shadow: 1px 1px 10px #ED7F10 !important;
 }
 
 .list-group > a {
@@ -65,7 +100,25 @@ html, body {
     min-width: 280px !important;
 }
 
+.carousel-item > img {
+    width: 100%;
+    height: 60%;
+}
 
+.carousel-caption {
+    bottom: 0;
+    height: 45%;
+}
+
+.boutonDetail {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.carousel-indicators {
+    right: initial;
+}
 
 /**
 @media queries
@@ -92,12 +145,22 @@ Version Medium
     }
 
     .bandeauMenu {
+        border-radius: 5px;
         display: block !important;
+        box-shadow: 1px 1px 15px #000;
+    }
+
+    .bandeauMenu > ul {
+        border-radius: 5px;
+    }
+
+    .bandeauMenu ul > li a {
+        background-color: #ED7F10 !important;
+        border-radius: 15px;
     }
 
     .main {
         margin-top: -5%;
-        ♂
     }
 }
 
@@ -131,4 +194,10 @@ Version XSmall
     .sliderfloat {
         display: none;
     }
+
+    .fondCuisine {
+        background: none;
+
+    }
 }
+

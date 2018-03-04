@@ -8,7 +8,7 @@
 ?>
 <div class="row w-90 ml-auto mr-auto mt-5 d-none bandeauMenu">
     <ul class="navbar nav bg-secondary">
-        <li class="nav-item"><a href="" class="btn btn-secondary">Accueil</a></li>
+        <li class="nav-item"><a href="index.html" class="btn btn-secondary">Accueil</a></li>
         <li class="nav-item"><a href="" class="btn btn-secondary">Recettes de cuisine</a></li>
         <li class="nav-item"><a href="" class="btn btn-secondary">Boissons et cocktails</a></li>
         <li class="nav-item"><a href="" class="btn btn-secondary">Conseils de pro</a></li>

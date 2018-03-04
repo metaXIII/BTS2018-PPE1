@@ -6,12 +6,12 @@
  * Time: 19:36
  */
 ?>
-<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-tomate col-lg-10 navbar-top">
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-tomate col-lg-11 navbar-top">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarExpand"
             aria-controls="NavbarExpand" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a href="#">
+    <a href="index.html">
         <img src="images/Wallpapers/icone.jpg" width="40px" alt="Logo FoodnDrink">
     </a>
 
@@ -37,19 +37,19 @@
     </div>
 </nav>
 
-<div class="col-6 col-md-3 sidebar-offcanvas leftbloc col-lg-2 all" id="sidebar">
+<div class="col-6 col-md-3 sidebar-offcanvas leftbloc col-lg-1 all bg-tomate" id="sidebar">
     <div class="list-group">
         <a href="#">
-            <img src="images/Wallpapers/food.jpg" height="200x" alt="" class="mw-100">
+            <img src="images/Wallpapers/food.jpg" alt="" class="mw-100">
         </a>
         <a href="#">
-            <img src="images/Wallpapers/cocktail.jpg" height="200x" alt="" class="mw-100">
+            <img src="images/Wallpapers/cocktail.jpg" alt="" class="mw-100">
         </a>
         <a href="#">
-            <img src="images/Wallpapers/cuistot.jpg" height="200x" alt="" class="mw-100">
+            <img src="images/Wallpapers/cuistot.jpg" alt="" class="mw-100">
         </a>
         <a href="#">
-            <img src="images/Wallpapers/contact.jpg" height="200x" alt="" class="mw-100">
+            <img src="images/Wallpapers/contact.jpg" alt="" class="mw-100">
         </a>
     </div>
 </div>
