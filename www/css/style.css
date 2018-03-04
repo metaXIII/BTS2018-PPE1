@@ -1,5 +1,5 @@
 html, body {
-    overflow-x: initial;
+    overflow-x: hidden;
     padding-bottom: 0;
 }
 
@@ -25,6 +25,7 @@ Tomate : #DE2916
 
 .footer {
     background-color: #dedede;
+    padding: 0;
 }
 
 .leftbloc div > a img {
@@ -41,8 +42,7 @@ Tomate : #DE2916
     margin-right: 0;
 }
 
-.bg-tomate
-{
+.bg-tomate {
     background-color: #DE2916;
 }
 
@@ -113,11 +113,15 @@ Tomate : #DE2916
 .boutonDetail {
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
 }
 
 .carousel-indicators {
-    right: initial;
+    display: none;
+}
+
+.min-height650 {
+    min-height: 650px;
 }
 
 /**
@@ -130,6 +134,7 @@ Version LG
 @media screen and (min-width: 1200px) {
 
 }
+
 /**
 Version Medium
  */
