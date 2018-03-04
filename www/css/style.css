@@ -190,6 +190,10 @@ Version Small
     .savebr {
         display: none;
     }
+
+    .fondCuisine {
+        background: none;
+    }
 }
 
 /**

@@ -202,7 +202,7 @@ function afficheAleatoire($element)
         }
         $query->closeCursor();
     } else {
-        $query = Database::getPdo()->prepare("SELECT ingredient1 FROM recette ORDER BY RAND() LIMIT 5");
+        $query = Database::getPdo()->prepare("SELECT ingredient1 FROM recette WHERE ingredient1 IS NOT NULL ORDER BY RAND() LIMIT 5");
         $query->execute();
         while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
             echo "<li class='item'>" . $result['ingredient1'] . "</li>";
