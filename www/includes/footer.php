@@ -33,10 +33,9 @@
         <div class="col-lg-6">
             Concocté avec amour par M. Dupont. N'hésitez pas à faire vivre la communauté pour promouvoir la cuisine !
         </div>
-        <div class="col-lg-4"><a href="mailto:lehchibi.gael@gmail.com">Le développeur du site</a></div>
-        <div class="col-lg-2">
-            Suivez-nous sur facebook !
-            <a href=""><img src="images/Wallpapers/logo/fb.png" width="20px" alt=""></a>
+        <div class="col-lg-3"><a href="mailto:lehchibi.gael@gmail.com">contacter les développeur du site</a></div>
+        <div class="col-lg-3">
+            Suivez-nous sur facebook !<a href=""><img src="images/Wallpapers/logo/fb.png" width="20px" alt=""></a>
         </div>
     </div>
 </footer>

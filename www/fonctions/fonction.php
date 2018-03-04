@@ -195,10 +195,10 @@ function afficheProduit($info)
 function afficheAleatoire($element)
 {
     if ($element == "recette") {
-        $query = Database::getPdo()->prepare("SELECT intitule FROM recette ORDER BY RAND() LIMIT 5");
+        $query = Database::getPdo()->prepare("SELECT id, intitule FROM recette ORDER BY RAND() LIMIT 5");
         $query->execute();
         while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
-            echo "<li class='item'>" . $result['intitule'] . "</li>";
+            echo "<li class='item'><a href='recette.php?id=" . $result['id'] . "'>" . $result['intitule'] . "</a></li>";
         }
         $query->closeCursor();
     } else {

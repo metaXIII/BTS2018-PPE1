@@ -124,6 +124,11 @@ Tomate : #DE2916
     min-height: 650px;
 }
 
+.btn-orange {
+    background-color: #ED7F10 !important;
+    border-radius: 15px;
+}
+
 /**
 @media queries
  */

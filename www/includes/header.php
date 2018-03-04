@@ -30,7 +30,7 @@
                 <a class="nav-link" href="#">Contact</a>
             </li>
            <li class="nav-item active">
-               <a class="nav-link" href="#">Se connecter</a>
+               <a class="nav-link" href="login.php">Se connecter</a>
            </li>
         </ul>
 
