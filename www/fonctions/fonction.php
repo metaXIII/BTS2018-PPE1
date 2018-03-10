@@ -355,6 +355,18 @@ function recupereComment($id)
         echo "<div class='col-lg-12 text-right text-secondary small'>Écrit par " . $result['auteur'] . " le " . $result['date'] . "</div>";
         echo "</div>";
         echo "</div>";
+        if (userIsAdmin()) {
+            echo "<br><br>";
+            echo "<div class='row col-8 ml-auto mr-auto'>";
+            echo "<div class='col-6 text-center'>";
+            echo "<a href='admin/commentaire.php?id=" . $result['id'] . "&edit=1' class='btn btn-secondary'>Modifier le 
+            commentaire</a>";
+            echo "</div>";
+            echo "<div class='col-6 text-center'>";
+            echo "<a href='admin/commentaire.php?id=" . $result['id'] . "&delete=1' class='btn btn-danger'>Supprimer le commentaire</a>";
+            echo "</div>";
+            echo "</div>";
+        }
         echo "<hr class='col-8'>";
 
     }
