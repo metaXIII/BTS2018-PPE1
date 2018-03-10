@@ -7,7 +7,6 @@
  */
 
 require 'fonctions/fonction.php';
-var_dump($userIsConnected);
 ?>
 
 <!doctype html>

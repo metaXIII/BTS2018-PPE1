@@ -47,7 +47,7 @@ if (isset($_GET['disconnect'])) {
                 <label for="password">Mot de passe</label>
                 <input type="password" class="form-control" name="password" placeholder="Votre mot de passe">
             </div>
-            <button type="submit" class="btn btn-orange">Submit</button>
+            <button type="submit" class="btn btn-orange">Se connecter</button>
         </form>
         <p class="text-right">
             <a href="new-user.php">Vous n'êtes pas inscrit?</a>

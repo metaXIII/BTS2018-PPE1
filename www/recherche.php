@@ -34,6 +34,7 @@ $total = $result['nombre'];
     <div class="row row-offcanvas row-offcanvas-right mr-auto ml-auto ml-5 pr-0 mb-5 col-lg-12 col-sm-12
     fondCuisine">
         <?php require 'includes/menu.php'; ?>
+        <?php require 'includes/recherche.php'; ?>
     </div>
     <div id="paginationInfo" style="text-align: center">
         <div id="pageInfoSelect">
