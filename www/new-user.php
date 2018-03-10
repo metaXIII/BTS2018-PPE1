@@ -25,22 +25,23 @@ require 'fonctions/fonction.php'; ?>
     </div>
 
     <div class="col-5 m-auto">
-        <form action="connection.php">
+        <form action="connection/new-user.php" method="post">
             <div class="form-group">
                 <label for="email">Votre adresse email</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                       placeholder="adresse mail">
+                       placeholder="adresse mail" name="email">
                 <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre adresse
                     email avec une tierce personne
                 </small>
             </div>
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
-                <input type="text" class="form-control" name="username" placeholder="Votre nom d'utilisateur">
+                <input type="text" class="form-control" name="username" placeholder="Votre nom d'utilisateur" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Votre mot de passe">
+                <input type="password" class="form-control" id="password" placeholder="Votre mot de passe"
+                       name="password" required>
             </div>
             <button type="submit" class="btn btn-orange">Envoyer votre demande d'inscription</button>
         </form>

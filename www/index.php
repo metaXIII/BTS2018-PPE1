@@ -6,6 +6,7 @@
  * Time: 16:37
  */
 require 'fonctions/fonction.php';
+
 ?>
 
 <!doctype html>

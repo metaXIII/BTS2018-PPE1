@@ -20,6 +20,28 @@ spl_autoload_register('chargerClass');
 //Connexion à la base de données.
 //$db = Database::getPdo();
 
+//Erreur
+$error = isset($_SESSION['error']) ? $_SESSION['error'] : "";
+function printError($error)
+{
+    echo "<div class='text-red text-center'>" . Errors::$errors[$error] . "</div>";
+    $_SESSION['error'] = "";
+}
+
+//connection
+function userIsConnected()
+{
+    return !empty($_SESSION['user']);
+}
+
+function userDisconnect()
+{
+    $_SESSION['user'] = "";
+    session_destroy();
+    session_start();
+}
+
+
 function afficheProduit($info)
 {
     $db = Database::getPdo();
@@ -276,5 +298,16 @@ function afficheIngredients($id)
         $ingredient .= $result['ingredient20'] . "//";
     $ingredient = explode("//", $ingredient);
     return $ingredient;
+}
 
+function verifyInput($input)
+{
+    $input = trim(htmlspecialchars(strip_tags($input)));
+    return $input;
+}
+
+function hashPassword($password)
+{
+    $password = hash("sha256", $password);
+    return $password;
 }

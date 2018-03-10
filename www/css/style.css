@@ -135,6 +135,9 @@ Tomate : #DE2916
     background-color: orange;
 }
 
+.text-red {
+    color: red;
+}
 /**
 @media queries
  */
@@ -163,13 +166,13 @@ Version Medium
     }
 
     .bandeauMenu {
-        border-radius: 5px;
+        border-radius: 40px;
         display: block !important;
         box-shadow: 1px 1px 15px #000;
     }
 
     .bandeauMenu > ul {
-        border-radius: 5px;
+        border-radius: 40px;
     }
 
     .bandeauMenu ul > li a {

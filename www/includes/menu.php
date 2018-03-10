@@ -12,6 +12,13 @@
         <li class="nav-item"><a href="" class="btn btn-secondary">Recettes de cuisine</a></li>
         <li class="nav-item"><a href="" class="btn btn-secondary">Boissons et cocktails</a></li>
         <li class="nav-item"><a href="" class="btn btn-secondary">Conseils de pro</a></li>
-        <li class="nav-item"><a href="login.php" class="btn btn-secondary">Se connecter</a></li>
+        <?php
+        if (userIsConnected()) {
+            echo '<li class="nav-item"><a href="login.php?disconnect" 
+                    class="btn btn-secondary">Se déconnecter</a></li>';
+        } else {
+            echo '<li class="nav-item"><a href="login.php" class="btn btn-secondary">Se connecter</a></li>';
+        }
+        ?>
     </ul>
 </div>

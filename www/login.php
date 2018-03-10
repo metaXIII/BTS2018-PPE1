@@ -5,7 +5,16 @@
  * Date: 05/03/2018
  * Time: 00:27
  */
+
+/**
+ * Déconnexion
+ */
+
 require 'fonctions/fonction.php';
+if (isset($_GET['disconnect'])) {
+    userDisconnect();
+    header("Location:index.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,15 +32,20 @@ require 'fonctions/fonction.php';
         <?php require 'includes/menu.php'; ?>
     </div>
 
+    <?php
+    if ($error) {
+        printError($error);
+    }
+    ?>
     <div class="col-lg-4 m-auto">
-        <form action="connection/connection.php">
+        <form action="connection/connection.php" method="post">
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
-                <input type="text" class="form-control" placeholder="Entrez votre nom d'utilisateur">
+                <input type="text" class="form-control" name="username" placeholder="Entrez votre nom d'utilisateur">
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input type="password" class="form-control" placeholder="Votre mot de passe">
+                <input type="password" class="form-control" name="password" placeholder="Votre mot de passe">
             </div>
             <button type="submit" class="btn btn-orange">Submit</button>
         </form>
