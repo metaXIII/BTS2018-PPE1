@@ -24,6 +24,7 @@ Tomate : #DE2916
 }
 
 .footer {
+    bottom: 0;
     background-color: #dedede;
     padding: 0;
 }
@@ -49,6 +50,7 @@ Tomate : #DE2916
 .fondCuisine {
     background: url("../images/Wallpapers/planche.jpg");
     background-size: 100%;
+    padding: 0;
 }
 
 .rechercheBloc {
@@ -129,6 +131,10 @@ Tomate : #DE2916
     border-radius: 15px;
 }
 
+.carousel-item {
+    background-color: orange;
+}
+
 /**
 @media queries
  */
@@ -137,7 +143,9 @@ Tomate : #DE2916
 Version LG
  */
 @media screen and (min-width: 1200px) {
-
+    .main {
+        min-height: 800px;
+    }
 }
 
 /**
