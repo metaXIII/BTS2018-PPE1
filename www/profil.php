@@ -2,12 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: Metaxiii
- * Date: 05/03/2018
- * Time: 00:39
+ * Date: 10/03/2018
+ * Time: 14:45
  */
-
 require 'fonctions/fonction.php';
-var_dump($userIsConnected);
+var_dump($_SESSION['user']);
+$result = infoProfil($_SESSION['user']);
+
+
 ?>
 
 <!doctype html>
@@ -32,25 +34,33 @@ var_dump($userIsConnected);
         if ($error)
             printError($error);
         ?>
-        <form action="connection/new-user.php" method="post">
+        <h3>Mettre à jour votre profil</h3>
+        <form action="connection/update-user.php" method="post">
+            <input type="hidden" name="id" value="<?= $result['id'] ?>">
             <div class="form-group">
                 <label for="email">Votre adresse email</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                       placeholder="adresse mail" name="email">
+                       placeholder="<?= $result['email'] ?>" name="email">
                 <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre adresse
                     email avec une tierce personne
                 </small>
             </div>
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
-                <input type="text" class="form-control" name="username" placeholder="Votre nom d'utilisateur" required>
+                <input type="text" class="form-control" name="username" placeholder="<?= $result['username'] ?>"
+                       required>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Votre mot de passe"
+                <label for="password">Nouveau mot de passe</label>
+                <input type="password" class="form-control" id="password" placeholder="********"
                        name="password" required>
             </div>
-            <button type="submit" class="btn btn-orange">Envoyer votre demande d'inscription</button>
+            <div class="form-group">
+                <label for="confirmPassword">confirmez le nouveau mot de passe</label>
+                <input type="password" class="form-control" name="confirmPassword" placeholder="Nouveau mot de passe"
+                       required>
+            </div>
+            <button type="submit" class="btn btn-orange">Modifier mon profil</button>
         </form>
     </div>
 

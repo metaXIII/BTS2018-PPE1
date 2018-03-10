@@ -309,3 +309,14 @@ function hashPassword($password)
     $password = hash("sha256", $password);
     return $password;
 }
+
+function infoProfil($user)
+{
+    $db = Database::getPdo();
+    $query = $db->prepare("SELECT * from user WHERE username = :username");
+    $query->bindValue(":username", $_SESSION['user']);
+    $query->execute();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
