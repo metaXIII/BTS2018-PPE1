@@ -58,6 +58,11 @@ Tomate : #DE2916
     box-shadow: 1px 1px 10px #ED7F10 !important;
 }
 
+.btn-tomate {
+    background-color: #DE2916;
+    color: #fff !important;
+}
+
 .list-group > a {
     text-align: center;
 }
@@ -116,6 +121,7 @@ Tomate : #DE2916
     position: absolute;
     bottom: 0;
     left: 0;
+    right: 0;
 }
 
 .carousel-indicators {
@@ -138,6 +144,15 @@ Tomate : #DE2916
 .text-red {
     color: red;
 }
+
+.decoration-none {
+    text-decoration: none;
+}
+
+.decoration-none:hover {
+    text-decoration: none;
+}
+
 /**
 @media queries
  */
@@ -225,4 +240,3 @@ Version XSmall
 
     }
 }
-

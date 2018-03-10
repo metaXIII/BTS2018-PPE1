@@ -349,3 +349,78 @@ function recupereComment($id)
     }
     $query->closeCursor();
 }
+
+function rechercheProduit($plat, $intitule, $ingredient, $page)
+{
+    $plat = verifyInput($plat);
+    $intitule = verifyInput($intitule);
+    $ingredient = verifyInput($ingredient);
+    $nombre_par_page = 5;
+    $debut = ($page - 1) * $nombre_par_page;
+
+    $db = Database::getPdo();
+    $query = $db->query("SELECT * from recette WHERE typeProduit Like '$plat'  
+                                      AND intitule Like '%$intitule%' 
+                                      AND
+                                      (
+                                      ingredient1 Like '$ingredient'
+                                      OR ingredient2 Like '$ingredient'
+                                      OR ingredient3 Like '$ingredient'
+                                      OR ingredient4 Like '$ingredient'
+                                      OR ingredient5 Like '$ingredient'
+                                      OR ingredient6 Like '$ingredient'
+                                      OR ingredient7 Like '$ingredient'
+                                      OR ingredient8 Like '$ingredient'
+                                      OR ingredient9 Like '$ingredient'
+                                      OR ingredient10 Like '$ingredient'
+                                      OR ingredient11 Like '$ingredient'
+                                      OR ingredient12 Like '$ingredient'
+                                      OR ingredient13 Like '$ingredient'
+                                      OR ingredient14 Like '$ingredient'
+                                      OR ingredient15 Like '$ingredient'
+                                      OR ingredient16 Like '$ingredient'
+                                      OR ingredient17 Like '$ingredient'
+                                      OR ingredient18 Like '$ingredient'
+                                      OR ingredient19 Like '$ingredient'
+                                      OR ingredient20 Like '$ingredient'
+                                      )
+                                      LIMIT $debut, $nombre_par_page
+                                      ");
+    return $query;
+}
+
+function rechercheProduitNb($plat, $intitule, $ingredient)
+{
+    $plat = verifyInput($plat);
+    $intitule = verifyInput($intitule);
+    $ingredient = verifyInput($ingredient);
+
+    $db = Database::getPdo();
+    $query = $db->query("SELECT COUNT(*) as nombre from recette WHERE typeProduit Like '$plat'  
+                                      AND intitule Like '%$intitule%' 
+                                      AND
+                                      (
+                                      ingredient1 Like '$ingredient'
+                                      OR ingredient2 Like '$ingredient'
+                                      OR ingredient3 Like '$ingredient'
+                                      OR ingredient4 Like '$ingredient'
+                                      OR ingredient5 Like '$ingredient'
+                                      OR ingredient6 Like '$ingredient'
+                                      OR ingredient7 Like '$ingredient'
+                                      OR ingredient8 Like '$ingredient'
+                                      OR ingredient9 Like '$ingredient'
+                                      OR ingredient10 Like '$ingredient'
+                                      OR ingredient11 Like '$ingredient'
+                                      OR ingredient12 Like '$ingredient'
+                                      OR ingredient13 Like '$ingredient'
+                                      OR ingredient14 Like '$ingredient'
+                                      OR ingredient15 Like '$ingredient'
+                                      OR ingredient16 Like '$ingredient'
+                                      OR ingredient17 Like '$ingredient'
+                                      OR ingredient18 Like '$ingredient'
+                                      OR ingredient19 Like '$ingredient'
+                                      OR ingredient20 Like '$ingredient'
+                                      )
+                                      ");
+    return $query;
+}

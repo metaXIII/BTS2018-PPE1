@@ -9,12 +9,12 @@
 <div class="bg-light ml-auto mr-auto mt-5 col-lg-4 col-md-5 col-sm-6 pt-2 col-10 border border-dark
         min-width280 rechercheBloc">
     <h4 class="text-center underline">Je recherche :</h4>
-    <form action="" method="post" class="text-center mb-3 mt-1">
+    <form action="recherche.php" method="post" class="text-center mb-3 mt-1">
         <div class="form-check form-check-inline">
-            <label><span>Un plat </span><input type="checkbox" name="plat"></label>
+            <label><span>Un plat </span><input type="checkbox" name="plat" value="1"></label>
         </div>
         <div class="form-check form-check-inline">
-            <label><input type="checkbox" name="plat"><span> Une boisson</span></label>
+            <label><input type="checkbox" name="plat" value="2"><span> Une boisson</span></label>
         </div>
         <div>
             <label for="intitule">
