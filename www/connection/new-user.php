@@ -29,6 +29,7 @@ $query->bindValue(":email", $email);
 $query->bindValue(":username", $username);
 $query->execute();
 $result = $query->fetch();
+$query->closeCursor();
 if ($result['exist']) {
     $_SESSION['error'] = 3;
     header("Location: ../new-user.php");

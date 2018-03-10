@@ -314,9 +314,38 @@ function infoProfil($user)
 {
     $db = Database::getPdo();
     $query = $db->prepare("SELECT * from user WHERE username = :username");
-    $query->bindValue(":username", $_SESSION['user']);
+    $query->bindValue(":username", $user);
     $query->execute();
     $result = $query->fetch(PDO::FETCH_ASSOC);
     $query->closeCursor();
     return $result;
+}
+
+function recupereComment($id)
+{
+    $db = Database::getPdo();
+    $query = $db->prepare("SELECT * from commentaire WHERE idRecette = :id");
+    $query->bindValue(":id", $id);
+    $query->execute();
+    while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
+        echo "<div class='col-lg-6 ml-auto mr-auto'>";
+        echo "<div class='row'>";
+        echo "<div class='col-lg-12 text-right'><h5>" . $result['titre'] . "</h5></div>";
+        echo "</div>";
+        echo "<div class='row'>";
+        echo "<div class='col-lg-10 ml-auto mr-auto'>";
+        echo $result['contenu'];
+        echo "</div>";
+        echo "</div>";
+        echo "<div class='row'>";
+        echo "<div class='col-lg-12 text-right text-secondary small'>Écrit par " . $result['auteur'] . " le " . $result['date'] . "</div>";
+        echo "</div>";
+        echo "</div>";
+        echo "<hr class='col-8'>";
+
+    }
+    if ($result == 0) {
+        echo "<div class='col-10 ml-5'>Aucun commentaire pour le moment ? à vous de partager vos impressions !</div>";
+    }
+    $query->closeCursor();
 }

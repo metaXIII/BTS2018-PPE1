@@ -57,11 +57,13 @@ $result = infoProfil($_SESSION['user']);
             </div>
             <div class="form-group">
                 <label for="confirmPassword">confirmez le nouveau mot de passe</label>
-                <input type="password" class="form-control" name="confirmPassword" placeholder="Nouveau mot de passe"
+                <input type="password" class="form-control" name="confirmPassword" placeholder="********"
                        required>
             </div>
             <button type="submit" class="btn btn-orange">Modifier mon profil</button>
         </form>
+
+        <a href="connection/delete-user.php?id=<?= $result['id'] ?>" class="btn btn-danger">Supprimer le compte</a>
     </div>
 
 

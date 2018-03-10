@@ -52,8 +52,32 @@ else
             <p><?= $result['contenu'] ?></p>
         </div>
     </div>
-
-
+    <div class="row">
+        <div class="col-lg-10 ml-5"><h3>Commentaires</h3></div>
+    </div>
+    <?php recupereComment($id) ?>
+    <?php
+    if (userIsConnected()) {
+        ?>
+        <h3 class="ml-5">Mettez la main à la pate ! </h3>
+        <div class="row">
+            <form action="connection/add-commentaire.php" method="post" class="col-lg-8 col-md-10 col-sm-10 col-10 ml-auto
+        mr-auto">
+                <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
+                <input type="hidden" name="auteur" value="<?= $_SESSION['user'] ?>">
+                <div class="form-group">
+                    <label for="titreComment">Le titre de votre commentaire : </label>
+                    <input type="text" name="titre" class="form-control" placeholder="titre de votre commentaire">
+                </div>
+                <div class="form-group">
+                    <label for="contenu">Votre commentaire :</label>
+                    <textarea name="contenu" id="contenu" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <input type="submit" class="btn btn-orange"/>
+            </form>
+        </div>
+    <?php }
+    ?>
 </main>
 <?php require 'includes/footer.php'; ?>
 
