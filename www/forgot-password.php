@@ -23,25 +23,34 @@ require 'fonctions/fonction.php'; ?>
         <?php require 'includes/menu.php'; ?>
     </div>
 
+    <?php
+    if ($error) {
+        printError($error);
+    }
+    ?>
     <div class="col-5 m-auto">
-        <form action="connection.php">
+        <form action="connection/forgot-password.php" method="post" id="Form">
             <div class="form-group">
                 <label for="email">Votre adresse email</label>
                 <input type="email" class="form-control" id="email"
-                       placeholder="adresse mail">
+                       placeholder="adresse mail" name="email" required>
             </div>
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
-                <input type="text" class="form-control" name="username" placeholder="Votre nom d'utilisateur">
+                <input type="text" class="form-control" name="username" placeholder="Votre nom d'utilisateur" required>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="mot de passe">
+                <label for="password">Nouveau mot de passe</label>
+                <input type="password" class="form-control" name="password" placeholder="Nouveau mot de passe" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Nouveau mot de passe</label>
+                <input type="password" class="form-control" name="confirmPassword" placeholder="Nouveau mot de passe"
+                       required>
             </div>
             <button type="submit" class="btn btn-orange">Réinitialiser votre mot de passe</button>
         </form>
     </div>
-
 
 </main>
 <?php require 'includes/footer.php'; ?>

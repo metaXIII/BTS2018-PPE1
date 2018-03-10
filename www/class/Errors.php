@@ -9,6 +9,8 @@
 class Errors
 {
     public static $errors = array(
-        1 => "Mauvais identifiant / Mot de passe"
+        1 => "Mauvais identifiant / Mot de passe",
+        2 => "Les mots de passe ne sont pas identiques",
+        3 => "Le nom d'utilisateur est déjà pris par un autre utilisateur, veuillez en choisir un autre"
     );
 }

@@ -14,6 +14,8 @@
         <li class="nav-item"><a href="" class="btn btn-secondary">Conseils de pro</a></li>
         <?php
         if (userIsConnected()) {
+            echo '<li class="nav-item"><a href="profil.php" 
+                    class="btn btn-secondary">Mon profil</a></li>';
             echo '<li class="nav-item"><a href="login.php?disconnect" 
                     class="btn btn-secondary">Se déconnecter</a></li>';
         } else {

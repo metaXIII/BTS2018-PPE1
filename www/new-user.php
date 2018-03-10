@@ -25,6 +25,11 @@ require 'fonctions/fonction.php'; ?>
     </div>
 
     <div class="col-5 m-auto">
+
+        <?php
+        if ($error)
+            printError($error);
+        ?>
         <form action="connection/new-user.php" method="post">
             <div class="form-group">
                 <label for="email">Votre adresse email</label>

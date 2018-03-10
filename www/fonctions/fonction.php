@@ -17,8 +17,6 @@ function chargerClass($class)
 
 spl_autoload_register('chargerClass');
 
-//Connexion à la base de données.
-//$db = Database::getPdo();
 
 //Erreur
 $error = isset($_SESSION['error']) ? $_SESSION['error'] : "";
