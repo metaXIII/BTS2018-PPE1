@@ -6,6 +6,13 @@
  * Time: 17:06
  */
 require 'fonctions/fonction.php';
+
+
+if (isset($_GET['typeProduit']) && $_GET['typeProduit'] == "1")
+    $_POST['plat'] = "1";
+elseif (isset($_GET['typeProduit']) && $_GET['typeProduit'] == "2")
+    $_POST['plat'] = "2";
+
 if (isset($_POST['plat']) && $_POST['plat'] !== "") {
     $plat = $_POST['plat'];
 } else
@@ -25,7 +32,6 @@ $total = $result['nombre'];
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="www/css/style.css"/>
     <?php require 'includes/head.php'; ?>
 </head>
 <body>
@@ -66,7 +72,6 @@ $total = $result['nombre'];
         var total = parseInt(<?= $total ?>);
         var nbProdParPage = 5;
         var pageTotal = total / nbProdParPage;
-        var mode = "grand";
         if (!(parseInt(pageTotal + "") == pageTotal))
             pageTotal = parseInt(pageTotal + "") + 1;
 
@@ -107,8 +112,8 @@ $total = $result['nombre'];
         }
 
         function load() {
-            console.log("getProduit.php?page=" + page + "&mode=" + mode);
-            $.get("getProduit.php?page=" + page + "&mode=" + mode,<?php echo json_encode($_REQUEST)?>).done(function
+            console.log("getProduit.php?page=" + page);
+            $.get("getProduit.php?page=" + page,<?php echo json_encode($_REQUEST)?>).done(function
                 ($data) {
                 $("#remplace")
                     .html($data)

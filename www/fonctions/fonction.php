@@ -32,6 +32,20 @@ function userIsConnected()
     return !empty($_SESSION['user']);
 }
 
+function userIsAdmin()
+{
+    $db = Database::getPdo();
+    $query = $db->prepare("SELECT admin from user WHERE username = :username");
+    $query->bindValue(":username", $_SESSION['user']);
+    $query->execute();
+    $result = $query->fetch();
+    if ($result['admin'] == "1")
+        $admin = true;
+    else
+        $admin = false;
+    return $admin;
+}
+
 function userDisconnect()
 {
     $_SESSION['user'] = "";
@@ -422,5 +436,21 @@ function rechercheProduitNb($plat, $intitule, $ingredient)
                                       OR ingredient20 Like '$ingredient'
                                       )
                                       ");
+    return $query;
+}
+
+function afficheAstuce($page)
+{
+    $db = Database::getPdo();
+    $nombre_par_page = 5;
+    $debut = ($page - 1) * $nombre_par_page;
+    $query = $db->query("SELECT * from astuce limit $debut, $nombre_par_page");
+    return $query;
+}
+
+function rechercheAstuceNb()
+{
+    $db = Database::getPdo();
+    $query = $db->query("SELECT COUNT(*) as nombre from astuce");
     return $query;
 }

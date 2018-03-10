@@ -10,7 +10,12 @@ require 'fonctions/fonction.php';
 
 //Valeurs obligatoires
 $page = $_GET['page'];
-$mode = $_GET['mode'];
+
+
+if (isset($_GET['typeProduit']) && $_GET['typeProduit'] == "1")
+    $_GET['plat'] = "1";
+elseif (isset($_GET['typeProduit']) && $_GET['typeProduit'] == "2")
+    $_GET['plat'] = "2";
 
 
 if (isset($_GET['plat']) && $_GET['plat'] !== "")

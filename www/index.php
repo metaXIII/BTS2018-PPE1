@@ -18,7 +18,6 @@ require 'fonctions/fonction.php';
 <?php require 'includes/header.php'; ?>
 
 <main role="main" class="pt-0 pr-0 col-lg-11 pl-0 col-md-12 col-sm-12 col-xs-12 main container">
-
     <div class="row row-offcanvas row-offcanvas-right topMenu mr-auto ml-auto ml-5 pr-0 mb-5 col-lg-12 col-sm-12
     fondCuisine">
         <?php require 'includes/menu.php'; ?>
