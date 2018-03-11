@@ -8,6 +8,7 @@
 
 require '../fonctions/fonction.php';
 require '../class/Database.php';
+$db = Database::getPdo();
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,7 +25,12 @@ require '../class/Database.php';
     <link href="../css/carousel.css" rel="stylesheet">
     <!--custom css -->
     <link rel="stylesheet" href="../css/style.css">
-
+    <?php
+    $query = $db->prepare("SELECT * from recette WHERE id = :id");
+    $query->bindValue(":id", $_GET['id']);
+    $query->execute();
+    $result = $query->fetch();
+    ?>
 </head>
 <body>
 
@@ -32,53 +38,145 @@ require '../class/Database.php';
 
     <div class="row row-offcanvas row-offcanvas-right mr-auto ml-auto ml-5 pr-0 mb-5 col-lg-12 col-sm-12
     fondCuisine">
-        <?php require 'includes/menu.php'; ?>
+        <?php require '../includes/menu.php'; ?>
     </div>
     <div class="col-lg-4 m-auto">
         <?php
         if ($error)
             printError($error);
         ?>
-        <form action="connection/ajout-recette.php" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="user" value="<?= $_SESSION['user'] ?>">
+        <form action="modify-recette.php" method="post">
             <h3>Ajouter une recette</h3>
             <div class="form-group">
                 <label for="username">Intitule de la recette</label>
-                <input type="text" class="form-control" name="intitule" placeholder="Entrez le nom du plat" required>
+                <input type="text" class="form-control" name="intitule" placeholder="Entrez le nom du plat" required
+                       value="<?= $result['intitule'] ?>">
             </div>
             <p>C'est : </p>
             <div class="form-check form-check-inline">
-                <label><span>Un plat </span><input type="checkbox" name="plat" value="1"></label>
+                <label><span>Un plat </span><input type="checkbox" name="plat"
+                                                   value="1" <?php if ($result['typeProduit'] == "1") echo "checked"; ?>></label>
             </div>
             <div class="form-check form-check-inline">
-                <label><input type="checkbox" name="plat" value="2"><span> Une boisson</span></label>
+                <label><input type="checkbox" name="plat"
+                              value="2" <?php if ($result['typeProduit'] == "2") echo "checked"; ?>><span> Une boisson</span></label>
             </div>
             <div class="form-group">
                 <label for="contenu">Accroche</label>
-                <input type="text" class="form-control" name="accroche" placeholder="Accroche de la recette" required>
+                <input type="text" class="form-control" name="accroche" placeholder="Accroche de la recette" required
+                       value="<?= $result['accroche'] ?>">
             </div>
             <div class="form-group">
                 <label for="contenu">Préparation</label>
-                <textarea name="contenu" id="contenu" cols="30" rows="10" class="form-control" required></textarea>
+                <textarea name="contenu" id="contenu" cols="30" rows="10" class="form-control"
+                          required><?= $result['contenu'] ?></textarea>
             </div>
             <div id="ingredient1">
                 <label for="ingredient1">Ingrédient 1</label>
-                <input type="text" name="ingredient1" placeholder="Ingredients" class="form-control" required>
-                <br>
-                <button class="font-weight-bold" onclick="AddInput(2);return false;">Ajouter un Ingredient</button>
+                <input type="text" name="ingredient1" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient1'] ?>">
             </div>
-            <div>
-                <label for="image">Image : </label>
-                <input type="file" name="file" class="form-control" required>
+            <div id="ingredient2">
+                <label for="ingredient2">Ingrédient 2</label>
+                <input type="text" name="ingredient2" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient2'] ?>">
             </div>
-            <br><br>
+            <div id="ingredient3">
+                <label for="ingredient3">Ingrédient 3</label>
+                <input type="text" name="ingredient3" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient3'] ?>">
+            </div>
+            <div id="ingredient4">
+                <label for="ingredient4">Ingrédient 4</label>
+                <input type="text" name="ingredient4" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient4'] ?>">
+            </div>
+            <div id="ingredient5">
+                <label for="ingredient5">Ingrédient 5</label>
+                <input type="text" name="ingredient5" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient5'] ?>">
+            </div>
+            <div id="ingredient6">
+                <label for="ingredient6">Ingrédient 6</label>
+                <input type="text" name="ingredient6" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient6'] ?>">
+            </div>
+            <div id="ingredient7">
+                <label for="ingredient7">Ingrédient 7</label>
+                <input type="text" name="ingredient7" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient7'] ?>">
+            </div>
+            <div id="ingredient8">
+                <label for="ingredient8">Ingrédient 8</label>
+                <input type="text" name="ingredient8" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient8'] ?>">
+            </div>
+            <div id="ingredient9">
+                <label for="ingredient9">Ingrédient 9</label>
+                <input type="text" name="ingredient9" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient9'] ?>">
+            </div>
+            <div id="ingredient10">
+                <label for="ingredient10">Ingrédient 10</label>
+                <input type="text" name="ingredient10" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient10'] ?>">
+            </div>
+            <div id="ingredient11">
+                <label for="ingredient11">Ingrédient 11</label>
+                <input type="text" name="ingredient11" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient11'] ?>">
+            </div>
+            <div id="ingredient12">
+                <label for="ingredient12">Ingrédient 12</label>
+                <input type="text" name="ingredient12" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient12'] ?>">
+            </div>
+            <div id="ingredient13">
+                <label for="ingredient13">Ingrédient 13</label>
+                <input type="text" name="ingredient13" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient13'] ?>">
+            </div>
+            <div id="ingredient14">
+                <label for="ingredient14">Ingrédient 14</label>
+                <input type="text" name="ingredient14" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient14'] ?>">
+            </div>
+            <div id="ingredient15">
+                <label for="ingredient15">Ingrédient 15</label>
+                <input type="text" name="ingredient15" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient15'] ?>">
+            </div>
+            <div id="ingredient16">
+                <label for="ingredient16">Ingrédient 16</label>
+                <input type="text" name="ingredient16" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient16'] ?>">
+            </div>
+            <div id="ingredient17">
+                <label for="ingredient17">Ingrédient 17</label>
+                <input type="text" name="ingredient17" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient17'] ?>">
+            </div>
+            <div id="ingredient18">
+                <label for="ingredient18">Ingrédient 18</label>
+                <input type="text" name="ingredient18" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient18'] ?>">
+            </div>
+            <div id="ingredient19">
+                <label for="ingredient19">Ingrédient 19</label>
+                <input type="text" name="ingredient19" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient19'] ?>">
+            </div>
+            <div id="ingredient20">
+                <label for="ingredient20">Ingrédient 20</label>
+                <input type="text" name="ingredient20" placeholder="Ingredients" class="form-control" required
+                       value="<?= $result['ingredient20'] ?>">
+            </div>
+            <br>
             <button type="submit" class="btn btn-orange">Modifier le contenu</button>
         </form>
     </div>
     <div class="clearboth"></div>
 </main>
-<?php require 'includes/footer.php' ?>
-<script src="js/addIngredient.js"></script>
 <script src="js/checkboxCheck.js"></script>
 </body>
 </html>

@@ -64,7 +64,8 @@ $db = Database::getPdo();
                         <a href="../recette.php?id=<?= $result['id'] ?>" class="btn btn-success" target="_blank">Vérifier
                             la
                             recette</a>
-                        <a href="../modifier-recette.php?id=<?= $result['id'] ?>" class="btn btn-secondary">Modifier
+                        <span>&nbsp;</span>
+                        <a href="modifier-recette.php?id=<?= $result['id'] ?>" class="btn btn-secondary">Modifier
                             la recette</a>
                         <span>&nbsp;</span>
                         <a href="#" class="btn btn-tomate">Supprimer la recette</a>
