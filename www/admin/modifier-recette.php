@@ -2,26 +2,29 @@
 /**
  * Created by PhpStorm.
  * User: Metaxiii
- * Date: 10/03/2018
- * Time: 22:40
+ * Date: 11/03/2018
+ * Time: 16:50
  */
 
-require 'fonctions/fonction.php';
+require '../fonctions/fonction.php';
+require '../class/Database.php';
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <?php require 'includes/head.php'; ?>
-    <style>
-        #ingredient1 {
-            text-align: right;
-        }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Site de cuisine - découverte culinaire">
+    <meta name="author" content="metaXIII">
+    <link rel="icon" href="../images/Wallpapers/icone.jpg">
+    <title>Food'n Drink - La cuisine pour les passionnés</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../css/carousel.css" rel="stylesheet">
+    <!--custom css -->
+    <link rel="stylesheet" href="../css/style.css">
 
-        #ingredient1 label {
-            width: 100%;
-            text-align: left;
-        }
-    </style>
 </head>
 <body>
 

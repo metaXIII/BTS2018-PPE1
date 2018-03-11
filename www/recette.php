@@ -25,11 +25,15 @@ else
 
 <main role="main" class="pt-0 pr-0 col-lg-11 pl-0 col-md-12 col-sm-12 col-xs-12 main container min-height650">
 
+
     <div class="row row-offcanvas row-offcanvas-right mr-auto ml-auto ml-5 pr-0 mb-5 col-lg-12 col-sm-12
     fondCuisine">
         <?php require 'includes/menu.php'; ?>
     </div>
-
+    <?php
+    if (!$result['actif'])
+        echo "<h1 class='text-center text-red'>Attention, cette recette n'est pas validée !</h1> ";
+    ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="col-lg-10 m-auto text-center">
