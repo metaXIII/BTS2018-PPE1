@@ -33,50 +33,98 @@ $db = Database::getPdo();
 
     <div class="row row-offcanvas row-offcanvas-right mr-auto ml-auto ml-5 pr-0 mb-5 col-lg-12 col-sm-12
     fondCuisine">
-        <?php require '../includes/menu.php'; ?>
+        <?php require 'includes/menu.php'; ?>
     </div>
 
     <div class="ml-auto mr-auto col-10">
-        <h3>Nouvelles recettes</h3>
         <?php
-        $query = $db->prepare("SELECT * from recette WHERE actif Like '0'");
-        $query->execute();
-        while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
+        if (isset($_GET['actif'])) {
+            $query = $db->prepare("SELECT * from recette WHERE actif Like '1'");
+            $query->execute();
+            while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                <div class="row bg-light">
+                    <div class="col-lg-4">
+                        <?php
+                        if ($result['typeProduit'] == "1")
+                            $img = "../images/recette/" . $result['image'];
+                        if ($result['typeProduit'] == "2")
+                            $img = "../images/cocktail/" . $result['image'];
+                        ?>
+                        <img src="<?= $img ?>" alt="Image de la recette" width="100%">
+                    </div>
+                    <div class="col-lg-7 offset-1">
+                        <div class="row">
+                            <h5><?= $result['intitule'] ?></h5>
+                        </div>
+                        <div class="row">
+                            <p><?= $result['accroche'] ?></p>
+                        </div>
+                        <div class="row">
+                            <a href="../recette.php?id=<?= $result['id'] ?>" class="btn btn-success" target="_blank">Vérifier
+                                la
+                                recette</a>
+                            <span>&nbsp;</span>
+                            <a href="modifier-recette.php?id=<?= $result['id'] ?>" class="btn btn-secondary">Modifier
+                                la recette</a>
+                            <span>&nbsp;</span>
+                            <a href="delete-recette.php?id=<?= $result['id'] ?>" class="btn btn-tomate">Supprimer la
+                                recette</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearboth">
+                    <hr>
+                </div>
+                <?php
+            }
+        } else {
             ?>
-            <div class="row bg-light">
-                <div class="col-lg-4">
-                    <?php
-                    if ($result['typeProduit'] == "1")
-                        $img = "../images/recette/" . $result['image'];
-                    if ($result['typeProduit'] == "2")
-                        $img = "../images/cocktail/" . $result['image'];
-                    ?>
-                    <img src="<?= $img ?>" alt="Image de la recette" width="100%">
-                </div>
-                <div class="col-lg-5 offset-1">
-                    <div class="row">
-                        <h5><?= $result['intitule'] ?></h5>
-                    </div>
-                    <div class="row">
-                        <p><?= $result['accroche'] ?></p>
-                    </div>
-                    <div class="row">
-                        <a href="../recette.php?id=<?= $result['id'] ?>" class="btn btn-success" target="_blank">Vérifier
-                            la
-                            recette</a>
-                        <span>&nbsp;</span>
-                        <a href="modifier-recette.php?id=<?= $result['id'] ?>" class="btn btn-secondary">Modifier
-                            la recette</a>
-                        <span>&nbsp;</span>
-                        <a href="delete-recette.php?id=<?= $result['id'] ?>" class="btn btn-tomate">Supprimer la
-                            recette</a>
-                    </div>
-                </div>
-            </div>
-            <div class="clearboth">
-                <hr>
-            </div>
+            <h3>Nouvelles recettes</h3>
             <?php
+            $query = $db->prepare("SELECT * from recette WHERE actif Like '0'");
+            $query->execute();
+            while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                <div class="row bg-light">
+                    <div class="col-lg-4">
+                        <?php
+                        if ($result['typeProduit'] == "1")
+                            $img = "../images/recette/" . $result['image'];
+                        if ($result['typeProduit'] == "2")
+                            $img = "../images/cocktail/" . $result['image'];
+                        ?>
+                        <img src="<?= $img ?>" alt="Image de la recette" width="100%">
+                    </div>
+                    <div class="col-lg-7 offset-1">
+                        <div class="row">
+                            <h5><?= $result['intitule'] ?></h5>
+                        </div>
+                        <div class="row">
+                            <p><?= $result['accroche'] ?></p>
+                        </div>
+                        <div class="row">
+                            <a href="modifier-recette.php?id=<?= $result['id'] ?>&validate=1" class="btn
+                        btn-primary">Valider
+                                la recette</a>
+                            <span>&nbsp;</span>
+                            <a href="../recette.php?id=<?= $result['id'] ?>" class="btn btn-success" target="_blank">Vérifier
+                                la
+                                recette</a>
+                            <span>&nbsp;</span>
+                            <a href="modifier-recette.php?id=<?= $result['id'] ?>" class="btn btn-secondary">Modifier
+                                la recette</a>
+                            <span>&nbsp;</span>
+                            <a href="delete-recette.php?id=<?= $result['id'] ?>" class="btn btn-tomate">Supprimer la
+                                recette</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearboth">
+                    <hr>
+                </div>
+                <?php
+            }
         }
         ?>
 

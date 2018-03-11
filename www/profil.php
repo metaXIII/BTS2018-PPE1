@@ -6,10 +6,7 @@
  * Time: 14:45
  */
 require 'fonctions/fonction.php';
-var_dump($_SESSION['user']);
 $result = infoProfil($_SESSION['user']);
-
-
 ?>
 
 <!doctype html>

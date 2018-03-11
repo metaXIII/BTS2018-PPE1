@@ -24,6 +24,7 @@
                               id='Administration' aria-haspopup='true' aria-expanded='false'>Administration</button>";
                 echo "<div class='dropdown-menu' aria-labelledby='menuAdministration'>";
                 echo "<a href='admin/gestion-recette.php' class='dropdown-item'>Gérer les nouvelles recettes</a>";
+                echo "<a href='admin/gestion-recette.php?actif=1' class='dropdown-item'>Gérer les anciennes recettes</a>";
                 echo "<a href='add-recette' class='dropdown-item'>Ajouter une astuce</a>";
                 echo "</div>";
                 echo "</div>";
@@ -36,3 +37,4 @@
         ?>
     </ul>
 </div>
+

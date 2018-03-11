@@ -61,7 +61,7 @@ function afficheProduit($info)
 {
     $db = Database::getPdo();
     if ($info == "recette") {
-        $query = $db->prepare("SELECT * FROM recette WHERE typeProduit Like '1' LIMIT 5");
+        $query = $db->prepare("SELECT * FROM recette WHERE typeProduit Like '1' AND actif like '1' LIMIT 5");
         $query->execute();
         $compteur = 1;
         while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
@@ -116,7 +116,7 @@ function afficheProduit($info)
         }
         $query->closeCursor();
     } elseif ($info == "cocktails") {
-        $query = $db->prepare("SELECT * FROM recette WHERE typeProduit Like '2' LIMIT 5");
+        $query = $db->prepare("SELECT * FROM recette WHERE typeProduit Like '2' and actif like '1' LIMIT 5");
         $query->execute();
         $compteur = 1;
         while ($result = $query->fetch(PDO::FETCH_ASSOC)) {

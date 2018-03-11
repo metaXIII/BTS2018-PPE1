@@ -9,6 +9,13 @@
 require '../fonctions/fonction.php';
 require '../class/Database.php';
 $db = Database::getPdo();
+
+if (isset($_GET['validate'])) {
+    $query = $db->prepare("UPDATE recette set actif = 1 WHERE id = :id");
+    $query->bindValue(":id", $_GET['id']);
+    $query->execute();
+    header("Location: gestion-recette.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,7 +45,7 @@ $db = Database::getPdo();
 
     <div class="row row-offcanvas row-offcanvas-right mr-auto ml-auto ml-5 pr-0 mb-5 col-lg-12 col-sm-12
     fondCuisine">
-        <?php require '../includes/menu.php'; ?>
+        <?php require 'includes/menu.php'; ?>
     </div>
     <div class="col-lg-4 m-auto">
         <?php
