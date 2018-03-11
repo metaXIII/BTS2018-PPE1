@@ -17,11 +17,11 @@ while ($result = $query->fetch()) {
     ?>
     <div class="row ml-5 col-8 ml-auto mr-auto">
         <div class="col-lg-4">
-            <a href="" class="text-dark decoration-none">
+            <a href="astuce-detail.php?id=<?= $result['id'] ?>" class="text-dark decoration-none">
                 <img src="<?= $img ?>" alt="image" width="100%"></div>
         </a>
         <div class="col-lg-6 offset-1">
-            <a href="" class="text-dark decoration-none">
+            <a href="astuce-detail.php?id=<?= $result['id'] ?>" class="text-dark decoration-none">
                 <div class="col-12 text-center"><?= $result['accroche'] ?></div>
                 <div class="col-12"><?= $result['contenu'] ?></div>
             </a>

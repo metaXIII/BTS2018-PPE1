@@ -39,16 +39,16 @@
 
 <div class="col-6 col-md-3 sidebar-offcanvas leftbloc col-lg-1 all bg-tomate" id="sidebar">
     <div class="list-group">
-        <a href="#">
+        <a href="recherche.php?typeProduit=1">
             <img src="images/Wallpapers/food.jpg" alt="" class="mw-100">
         </a>
-        <a href="#">
+        <a href="recherche.php?typeProduit=2">
             <img src="images/Wallpapers/cocktail.jpg" alt="" class="mw-100">
         </a>
-        <a href="#">
+        <a href="astuce.php">
             <img src="images/Wallpapers/cuistot.jpg" alt="" class="mw-100">
         </a>
-        <a href="#">
+        <a href="contact.php">
             <img src="images/Wallpapers/contact.jpg" alt="" class="mw-100">
         </a>
     </div>

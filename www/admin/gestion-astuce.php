@@ -54,6 +54,7 @@ $db = Database::getPdo();
                 <div class="col-lg-7 offset-1">
                     <h3><?= $result['accroche'] ?></h3>
                     <p><?= $result['contenu'] ?></p>
+                    <a href="../astuce-detail.php?id=<?= $result['id'] ?>" class="btn btn-primary">Voir l'astuce</a>
                     <a href="astuce.php?modify=1&id=<?= $result['id'] ?>" class="btn btn-secondary">Modifier
                         l'astuce</a>
                     <a href="astuce.php?delete=1&id=<?= $result['id'] ?>" class="btn btn-danger">Supprimer l'astuce</a>

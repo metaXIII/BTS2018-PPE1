@@ -93,11 +93,8 @@ require 'fonctions/fonction.php';
             </a>
         </div>
     </div>
-
-
-
 </main>
-
 <?php require 'includes/footer.php'; ?>
+
 </body>
 </html>

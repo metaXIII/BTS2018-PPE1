@@ -16,5 +16,6 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="css/carousel.css" rel="stylesheet">
+<link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
 <!--custom css -->
 <link rel="stylesheet" href="css/style.css">

@@ -183,7 +183,7 @@ function afficheProduit($info)
                     echo "<div class='carousel-caption text-left'>";
                     echo "<h2>Astuce du jour :</h2>";
                     echo "<p>" . $result['accroche'] . "</p>";
-                    echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='astuce.php?id=" . $result['id'] . "' role='button'>Voir l'astuce</a></p>";
+                    echo "<p><a class='btn btn-lg btn-primary boutonDetail' href='astuce-detail.php?id=" . $result['id'] . "' role='button'>Voir l'astuce</a></p>";
                     echo "</div>";
                     echo "</div>";
                     echo "</div>";
@@ -246,6 +246,22 @@ function afficheAleatoire($element)
         }
         $query->closeCursor();
     }
+}
+
+function recupereAstuce($id)
+{
+    if ((int)$id) {
+        $query = Database::getPdo()->prepare("SELECT * FROM astuce WHERE id = :id");
+        $query->bindValue(":id", $id);
+        $query->execute();
+        $result = $query->fetch();
+        $query->closeCursor();
+        if (!$result)
+            header("Location: index.html");
+        else
+            return $result;
+    } else
+        header("Location: index.html");
 }
 
 function recupereInfo($id)
