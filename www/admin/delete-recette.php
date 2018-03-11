@@ -11,5 +11,5 @@ require '../class/Database.php';
 $id = $_GET['id'];
 $db = Database::getPdo();
 
-$query = exec("DELETE FROM recette WHERE id = " . $id);
+$query = $db->exec("DELETE FROM recette WHERE id = " . $id);
 header("Location: gestion-recette.php");
