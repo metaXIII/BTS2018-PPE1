@@ -34,16 +34,19 @@ function userIsConnected()
 
 function userIsAdmin()
 {
-    $db = Database::getPdo();
-    $query = $db->prepare("SELECT admin from user WHERE username = :username");
-    $query->bindValue(":username", $_SESSION['user']);
-    $query->execute();
-    $result = $query->fetch();
-    if ($result['admin'] == "1")
-        $admin = true;
-    else
-        $admin = false;
-    return $admin;
+    if (isset($_SESSION['user'])) {
+        $db = Database::getPdo();
+        $query = $db->prepare("SELECT admin from user WHERE username = :username");
+        $query->bindValue(":username", $_SESSION['user']);
+        $query->execute();
+        $result = $query->fetch();
+        if ($result['admin'] == "1")
+            $admin = true;
+        else
+            $admin = false;
+        return $admin;
+    } else
+        return $admin = false;
 }
 
 function userDisconnect()

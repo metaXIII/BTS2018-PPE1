@@ -16,10 +16,9 @@
         <li class="nav-item"><a href="astuce.php" class="btn btn-secondary">Conseils de pro</a></li>
         <?php
         if (userIsConnected()) {
-            echo '<li class="nav-item"><a href="profil.php" 
-                    class="btn btn-secondary">Mon profil</a></li>';
+            echo '<li class="nav-item"><a href="profil.php" class="btn btn-secondary">Mon profil</a></li>';
+            echo "<li class='nav-item'><a href='add-recette.php' class='btn btn-secondary'>Proposez une recette</a></li>";
             if (userIsAdmin()) {
-                echo "<li class='nav-item'><a href='add-recette' class='btn btn-secondary'>Ajouter une recette</a></li>";
                 echo "<li class='nav-item'><a href='add-recette' class='btn btn-secondary'>Ajouter une astuce</a></li>";
             }
             echo '<li class="nav-item"><a href="login.php?disconnect" 
