@@ -70,6 +70,7 @@ require 'fonctions/fonction.php';
             </div>
             <br><br>
             <button type="submit" class="btn btn-orange">Modifier le contenu</button>
+            <p class="small">Tous les champs sont obligatoires, merci !</p>
         </form>
     </div>
     <div class="clearboth"></div>

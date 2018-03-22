@@ -100,37 +100,21 @@ if (isset($_GET['modify'])) {
             <?php require 'includes/menu.php'; ?>
         </div>
 
-        <div class="ml-auto mr-auto col-10">
-            <div class="row">
-                <a href="astuce.php?add=1" class="ml-auto mr-auto btn btn-success">Ajouter une astuce</a>
-            </div>
-            <div class="clearboth"></div>
-            <?php
-            $query = $db->prepare("SELECT * from astuce");
-            $query->execute();
-            while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
-                $img = "../images/astuces/" . $result['image'];
-                ?>
-                <div class="row bg-light col-10 mr-auto ml-auto">
-                    <div class="col-lg-4">
-                        <img src="<?= $img ?>" width="100%" alt="astuce">
-                    </div>
-                    <div class="col-lg-7 offset-1">
-                        <h3><?= $result['accroche'] ?></h3>
-                        <p><?= $result['contenu'] ?></p>
-                        <a href="../getAstuces.php?id=<?= $result['id'] ?>" class="btn btn-primary">Voir l'astuce</a>
-                        <a href="astuce.php?modify=1&id=<?= $result['id'] ?>" class="btn btn-secondary">Modifier
-                            l'astuce</a>
-                        <a href="astuce.php?delete=1&id=<?= $result['id'] ?>" class="btn btn-danger">Supprimer
-                            l'astuce</a>
-                    </div>
+        <div class="ml-auto mr-auto col-10 col-lg-6">
+            <form action="add-astuce.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="accroche">Votre accroche</label>
+                    <input type="text" name="accroche" class="form-control">
                 </div>
-                <div class="clearboth">
-                    <hr>
+                <div class="form-group">
+                    <textarea name="contenu" id="contenu" cols="30" rows="10" class="form-control"></textarea>
                 </div>
-                <?php
-            }
-            ?>
+                <div class="form-group">
+                    <label for="file">Votre image : </label>
+                    <input type="file" name="file">
+                </div>
+                <input type="submit" class="btn btn-orange" value="Enregistrer">
+            </form>
         </div>
     </main>
     </body>

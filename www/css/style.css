@@ -198,6 +198,10 @@ Version Medium
     .main {
         margin-top: -5%;
     }
+
+    #map {
+        min-height: 600px;
+    }
 }
 
 /* En dessous de */

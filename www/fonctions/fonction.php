@@ -232,17 +232,17 @@ function afficheProduit($info)
 function afficheAleatoire($element)
 {
     if ($element == "recette") {
-        $query = Database::getPdo()->prepare("SELECT id, intitule FROM recette ORDER BY RAND() LIMIT 5");
+        $query = Database::getPdo()->prepare("SELECT id, intitule FROM recette WHERE actif = 1 ORDER BY RAND() LIMIT 5");
         $query->execute();
         while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
             echo "<li class='item'><a href='recette.php?id=" . $result['id'] . "'>" . $result['intitule'] . "</a></li>";
         }
         $query->closeCursor();
     } else {
-        $query = Database::getPdo()->prepare("SELECT ingredient1 FROM recette WHERE ingredient1 IS NOT NULL ORDER BY RAND() LIMIT 5");
+        $query = Database::getPdo()->prepare("SELECT DISTINCT ingredient1 FROM recette WHERE ingredient1 IS NOT NULL ORDER BY RAND() LIMIT 5");
         $query->execute();
         while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
-            echo "<li class='item'>" . $result['ingredient1'] . "</li>";
+            echo "<li class='item'><a href='recherche.php?ingredient=" . $result['ingredient1'] . "'>" . $result['ingredient1'] . "</a></li>";
         }
         $query->closeCursor();
     }
@@ -429,6 +429,7 @@ function rechercheProduit($plat, $intitule, $ingredient, $page)
                                       OR ingredient19 Like '$ingredient'
                                       OR ingredient20 Like '$ingredient'
                                       )
+                                      AND actif = 1
                                       LIMIT $debut, $nombre_par_page
                                       ");
     return $query;
@@ -466,6 +467,7 @@ function rechercheProduitNb($plat, $intitule, $ingredient)
                                       OR ingredient19 Like '$ingredient'
                                       OR ingredient20 Like '$ingredient'
                                       )
+                                      AND actif = 1
                                       ");
     return $query;
 }

@@ -37,7 +37,7 @@ else
     <div class="row">
         <div class="col-lg-12">
             <div class="col-lg-10 m-auto text-center">
-                <img src="<?= $img ?>" alt="" style="max-width: 100%; margin: auto;">
+                <img src="<?= $img ?>" alt="" style="max-height: 500px;max-width: 100%; margin: auto;">
             </div>
         </div>
         <div class="col-lg-10 ml-5">

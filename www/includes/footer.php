@@ -35,7 +35,8 @@
         </div>
         <div class="col-lg-3"><a href="mailto:lehchibi.gael@gmail.com">contacter les développeur du site</a></div>
         <div class="col-lg-3">
-            Suivez-nous sur facebook !<a href=""><img src="images/Wallpapers/logo/fb.png" width="20px" alt=""></a>
+            Suivez-nous sur facebook !<a href="facebook.fr"><img src="images/Wallpapers/logo/fb.png" width="20px"
+                                                                 alt=""></a>
         </div>
     </div>
 </footer>

@@ -12,6 +12,8 @@ if (isset($_GET['typeProduit']) && $_GET['typeProduit'] == "1")
     $_POST['plat'] = "1";
 elseif (isset($_GET['typeProduit']) && $_GET['typeProduit'] == "2")
     $_POST['plat'] = "2";
+if (isset($_GET['ingredient']))
+    $_POST['ingredient1'] = $_GET['ingredient'];
 
 if (isset($_POST['plat']) && $_POST['plat'] !== "") {
     $plat = $_POST['plat'];
@@ -52,16 +54,29 @@ $total = $result['nombre'];
 
     <div class="row col-10 ml-auto mr-auto">
         <div class="col-2">
-            <a id="before" class="btn btn-tomate">Précedent</a>
+            <a class="btn btn-tomate before">Précedent</a>
         </div>
         <div class="col-2 offset-8">
-            <a id="next" class="btn btn-tomate">Suivant</a>
+            <a class="btn btn-tomate next">Suivant</a>
         </div>
     </div>
     <hr class="col-8 mb-5">
 
     <!-- ici -->
     <div id="remplace"></div>
+
+    <div class="row col-10 ml-auto mr-auto">
+        <div class="col-2">
+            <a class="btn btn-tomate before">Précedent</a>
+        </div>
+        <div class="col-2 offset-8">
+            <a class="btn btn-tomate next">Suivant</a>
+        </div>
+    </div>
+
+    <div class="clearboth"></div>
+
+
 </main>
 <?php require 'includes/footer.php'; ?>
 
@@ -77,16 +92,16 @@ $total = $result['nombre'];
 
         function verifyPage() {
             if (page == 1)
-                $("#before").hide();
+                $(".before").hide();
             else
-                $("#before").show();
+                $(".before").show();
             if (pageTotal == page)
-                $("#next").hide();
+                $(".next").hide();
             else
-                $("#next").show();
+                $(".next").show();
             if (pageTotal == 0) {
                 $("#paginationInfo").text("Aucun résultat pour cette recherche");
-                $("#next").hide();
+                $(".next").hide();
             }
             else
                 $("#paginationInfo").text("Page " + page + " / " + pageTotal);
@@ -123,14 +138,14 @@ $total = $result['nombre'];
         //$("#main").load("getProduit.php",{page : page<?php foreach ($_POST as $key => $value) echo "," . $key . " : '" . $value . "'";?>});
         load();
         verifyPage();
-        $("#before").on("click", function () {
+        $(".before").on("click", function () {
             page = page - 1;
             //$("#main").load("getProduit.php",{page : page<?php foreach ($_POST as $key => $value) echo "," . $key . " : '" . $value . "'";?>});
             load();
             verifyPage();
         })
         ;
-        $("#next").on("click", function () {
+        $(".next").on("click", function () {
             page = page + 1;
             //$("#main").load("getProduit.php",{page : page<?php foreach ($_POST as $key => $value) echo "," . $key . " : '" . $value . "'";?>});
             load();

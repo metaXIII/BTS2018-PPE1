@@ -42,7 +42,7 @@ $db = Database::getPdo();
         </div>
         <div class="clearboth"></div>
         <?php
-        $query = $db->prepare("SELECT * from astuce");
+        $query = $db->prepare("SELECT * from astuce ORDER by id desc");
         $query->execute();
         while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
             $img = "../images/astuces/" . $result['image'];

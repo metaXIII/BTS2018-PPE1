@@ -48,7 +48,6 @@ while ($result = $query->fetch()) {
             <a href="recette.php?id=<?= $result['id'] ?>" class="text-dark decoration-none">
                 <div class="col-12 text-center"><?= $result['intitule'] ?></div>
                 <div class="col-12"><?= $result['accroche'] ?></div>
-                <div class="col-12"><?= $result['contenu'] ?></div>
             </a>
         </div>
     </div>
